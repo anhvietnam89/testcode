@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa Hàng Handmade - Đan Móc Len</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">LenSợiStore</div>
+        <nav>
+            <a href="index.html">Cửa hàng</a>
+            <a href="admin.html" id="admin-link" style="display:none;">Quản lý</a>
+            <span id="user-info"></span>
+            <button id="auth-btn" onclick="handleAuthAction()">Đăng nhập</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="products-section">
+            <h2>Sản phẩm nổi bật</h2>
+            <div id="product-list" class="grid-container"></div>
+        </section>
+
+        <section class="cart-section">
+            <h2>Giỏ hàng của bạn</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">Tổng tiền: <span id="cart-total-price">0</span>đ</div>
+            
+            <div class="checkout-form" id="checkout-box">
+                <h3>Thông tin thanh toán</h3>
+                <input type="text" id="cus-name" placeholder="Họ và tên" required>
+                <input type="text" id="cus-phone" placeholder="Số điện thoại" required>
+                <input type="text" id="cus-address" placeholder="Địa chỉ giao hàng" required>
+                <button onclick="processCheckout()">Xác nhận thanh toán</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+        // Khởi chạy khi tải trang shop
+        renderShopProducts();
+        renderCart();
+        checkLoginStatus();
+    </script>
+</body>
+</html>
