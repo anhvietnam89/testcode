@@ -1,0 +1,5 @@
+├── index.html       (Trang chủ & Cửa hàng)
+├── login.html       (Trang đăng nhập / đăng ký)
+├── admin.html       (Trang quản lý sản phẩm & đơn hàng)
+├── style.css        (Giao diện chung)
+└── app.js           (Logic xử lý toàn bộ hệ thống)

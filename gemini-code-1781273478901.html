@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập / Đăng Ký</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <h2 id="auth-title">Đăng Nhập</h2>
+            <input type="text" id="username" placeholder="Tên đăng nhập">
+            <input type="password" id="password" placeholder="Mật khẩu">
+            <button id="main-auth-btn" onclick="submitAuth()">Đăng nhập</button>
+            <p onclick="toggleAuthMode()" id="toggle-text" style="cursor:pointer; color: blue; margin-top:10px;">
+                Chưa có tài khoản? Đăng ký ngay
+            </p>
+            <br>
+            <a href="index.html">← Quay lại cửa hàng</a>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

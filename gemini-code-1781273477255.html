@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Quản Trị (Admin)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Hệ Thống Admin</div>
+        <nav><a href="index.html">← Quay lại Shop</a></nav>
+    </header>
+
+    <main class="container admin-grid">
+        <section class="admin-box">
+            <h2>Thêm Sản Phẩm Mới</h2>
+            <input type="text" id="prod-name" placeholder="Tên sản phẩm">
+            <input type="number" id="prod-price" placeholder="Giá (đ)">
+            <input type="text" id="prod-img" placeholder="Link ảnh (hoặc dùng ảnh mẫu)">
+            <button onclick="addNewProduct()">Thêm Sản Phẩm</button>
+            
+            <h3>Danh sách sản phẩm hiện tại</h3>
+            <div id="admin-product-list"></div>
+        </section>
+
+        <section class="admin-box">
+            <h2>Quản Lý Đơn Hàng</h2>
+            <div id="admin-order-list"></div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+        // Bảo mật cơ bản: Nếu không phải admin thì đá về trang chủ
+        const user = JSON.parse(localStorage.getItem('currentUser'));
+        if(!user || user.username !== 'admin') {
+            alert('Bạn không có quyền truy cập trang này!');
+            window.location.href = 'index.html';
+        }
+        renderAdminProducts();
+        renderAdminOrders();
+    </script>
+</body>
+</html>
